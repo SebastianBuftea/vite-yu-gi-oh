@@ -1,7 +1,17 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch&family=Kanit:wght@200&family=Montserrat&family=Roboto:wght@300;400&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
