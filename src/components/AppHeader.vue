@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template lang="">
-  <header class="container">
+  <header class="container" >
     <h2>
         Yu-Gi-Oh Api
     </h2>
