@@ -12,8 +12,8 @@ export default {
 
     <div class="width_5 m-1 my-2">
         <img :src="card.card_images[0].image_url_small" alt="" >
-        <div>{{card.name}}</div>
-        <div>{{card.archetype}}</div> 
+        <div class=" my-2 white_text">{{card.name}}</div>
+        <div class=" my-2">{{card.archetype}}</div> 
      </div>  
 
 </template>
@@ -31,5 +31,10 @@ export default {
         width: 100%;
     }
 
+    .white_text {
+        color: $white_color;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
 }
 </style>
