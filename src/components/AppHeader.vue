@@ -1,6 +1,5 @@
 <script>
 export default {
-  name: 'AppHeader'
 
 }
 </script>
@@ -10,6 +9,6 @@ export default {
   </div>
 </template>
 
-<style lang="scss">
-@use './styles/generals.scss' as *;
+<style lang="">
+  
 </style>
