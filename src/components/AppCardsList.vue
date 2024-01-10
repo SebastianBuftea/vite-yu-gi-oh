@@ -24,10 +24,10 @@ export default {
 </script>
 
 <template lang="">
-    <div class="container bg-white">
-        <div class="row">
-            <div class="width_5  " v-for= "(card, index) in store.CardList" :key="index" >
-                <img :src="card.card_images[0].image_url_small" alt="" class="img-fluid">
+    <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+            <div class="width_5 m-1 my-2 " v-for= "(card, index) in store.CardList" :key="index" >
+                <img :src="card.card_images[0].image_url_small" alt="" >
                 <div>{{card.name}}</div>
                 <div>{{card.archetype}}</div>
             </div>
@@ -38,10 +38,22 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
+@use '../styles/partials/variables' as *;
 
-.width_5 {
-    width: calc(100% / 5);
+.container {
     background-color: white;
-    border: 1px solid black;
+    padding: 20px;
+
+    .width_5 {
+        width: calc(100% / 5 - 20px);
+        border: 1px solid black;
+        background-color: $orange_color;
+        padding: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
 }
 </style>
