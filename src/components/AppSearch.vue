@@ -14,12 +14,13 @@ export default {
 </script>
 
 <template lang="">
-    <div>
-        <label for="filter" class="control-label"> Status</label>
-        <option value="" selected>Select archetype</option>
-        <option v-for="archetype, index in store.archetypeArray" :key="index" value="archetype">
-        {{archetype}}
-        </option>
+    <div class="container my-2 p-0">
+        <select name="" id="filter"  class="">
+            <option value="" selected>Select archetype</option>
+            <option v-for="archetype, index in store.archetypeArray" :key="index" value="archetype">
+                {{archetype.archetype_name}}
+            </option>
+        </select>
         
     </div>
 </template>

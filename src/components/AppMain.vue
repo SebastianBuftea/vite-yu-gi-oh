@@ -1,12 +1,15 @@
 <script>
+import AppSearchVue from './AppSearch.vue';
 import AppCardsList from './AppCardsList.vue'
 import { store } from '../store.js'
 import axios from 'axios';
 
+
 export default {
     name: 'AppMain',
     components: {
-        AppCardsList
+        AppCardsList,
+        AppSearchVue
     },
 
     data() {
@@ -18,13 +21,18 @@ export default {
         getCardList() {
             axios.get(this.store.endpoint).then((response) => {
                 this.store.CardList = response.data.data
-                this.store.archetypeArray = response.data.data.archetype
+            })
 
+        },
+        getArchetyList() {
+            axios.get(this.store.endpointArchetype).then((response) => {
+                this.store.archetypeArray = response.data
             })
         }
     },
     created() {
         this.getCardList()
+        this.getArchetyList()
     },
 }
 
@@ -32,6 +40,7 @@ export default {
 
 <template lang="">
     <main class="p-2">
+        <AppSearchVue />
         <AppCardsList />
     </main>
 </template>
