@@ -1,5 +1,7 @@
 <script>
 import AppCardsList from './AppCardsList.vue'
+import { store } from '../store.js'
+import axios from 'axios';
 
 export default {
     name: 'AppMain',
@@ -9,9 +11,21 @@ export default {
 
     data() {
         return {
-
+            store
         }
-    }
+    },
+    methods: {
+        getCardList() {
+            axios.get(this.store.endpoint).then((response) => {
+                this.store.CardList = response.data.data
+                this.store.archetypeArray = response.data.data.archetype
+
+            })
+        }
+    },
+    created() {
+        this.getCardList()
+    },
 }
 
 </script>

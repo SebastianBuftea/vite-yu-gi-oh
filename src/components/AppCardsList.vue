@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios';
+
 import { store } from '../store.js'
 import SingleCard from './SingleCardApp.vue'
 
@@ -14,17 +14,7 @@ export default {
             store
         }
     },
-    methods: {
-        getCardList() {
-            axios.get(this.store.endpoint).then((response) => {
-                this.store.CardList = response.data.data
-                console.log(this.store.CardList)
-            })
-        }
-    },
-    created() {
-        this.getCardList()
-    },
+
 }
 </script>
 
@@ -32,7 +22,7 @@ export default {
     <div class="container">
         <div class="row text-center">
             <div class=" d-flex flex-wrap justify-content-center">
-                <SingleCard  v-for= "(card, index) in store.CardList" :key="index" :card="card" />
+                <SingleCard  v-for= "(card, index) in store.CardList" :key="index" :card="card" :index="index" />
             </div>
         </div>
         

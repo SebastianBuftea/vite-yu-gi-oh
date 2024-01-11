@@ -1,11 +1,19 @@
 <script>
+import { store } from '../store.js'
 export default {
     name: 'SingleCard',
     props: {
         card: Object
+    },
 
-    }
+    data() {
+        return {
+            store
+        }
+    },
 }
+
+
 </script>
 
 <template lang="">
