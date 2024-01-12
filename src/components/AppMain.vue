@@ -19,7 +19,13 @@ export default {
     },
     methods: {
         getCardList() {
-            axios.get(this.store.endpoint).then((response) => {
+
+            let endpoint = store.endpoint
+            if (store.searchArchetype !== '') {
+                endpoint += `&archetype=${store.searchArchetype}`
+
+            }
+            axios.get(endpoint).then((response) => {
                 this.store.CardList = response.data.data
             })
 
@@ -28,6 +34,9 @@ export default {
             axios.get(this.store.endpointArchetype).then((response) => {
                 this.store.archetypeArray = response.data
             })
+        },
+        filterCardsArchetype() {
+            this.getCardList();
         }
     },
     created() {
@@ -40,7 +49,7 @@ export default {
 
 <template lang="">
     <main class="p-2">
-        <AppSearchVue />
+        <AppSearchVue @filter_cards="filterCardsArchetype"/>
         <AppCardsList />
     </main>
 </template>
